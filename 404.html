@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <script>
       var l = window.location;
-      var base = '/product-designer-portfolio';
+      var base = '/portfolio';
       var path = l.pathname.slice(base.length) || '/';
       l.replace(base + '/?p=' + encodeURIComponent(path + l.search) + (l.hash ? '&h=' + encodeURIComponent(l.hash.slice(1)) : ''));
     </script>
