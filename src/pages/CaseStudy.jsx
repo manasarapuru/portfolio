@@ -307,19 +307,17 @@ export default function CaseStudy() {
           </div>
         </header>
         
-        <div className="cs-scope-note">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <span>This case study mainly showcases the design process. My work also included backend development. Please reach out if you are interested in learning more about the backend.</span>
-        </div>
+        {cs.product && (
+          <Section label={cs.productLabel || 'Product'} takeaway={cs.productTakeaway}>
+            <NarrativeWithMedia text={cs.product} media={cs.productMedia} />
+          </Section>
+        )}
 
-       <br />
-        <Section label="Product" takeaway={cs.productTakeaway}>
-          <NarrativeWithMedia text={cs.product} media={cs.productMedia} />
-        </Section>
-
-        <Section label="Context" takeaway={cs.contextTakeaway}>
-          <NarrativeWithMedia text={cs.context} media={cs.contextMedia} />
-        </Section>
+        {cs.context && (
+          <Section label="Context" takeaway={cs.contextTakeaway}>
+            <NarrativeWithMedia text={cs.context} media={cs.contextMedia} />
+          </Section>
+        )}
 
         {cs.personas?.length > 0 && (
           <Section label="Personas">
@@ -373,17 +371,23 @@ export default function CaseStudy() {
           </Section>
         )}
 
-        <Section label="Problem" takeaway={cs.problemTakeaway}>
-          <NarrativeWithMedia text={cs.problemState} media={cs.problemMedia} />
-        </Section>
+        {cs.problemState && (
+          <Section label="Problem" takeaway={cs.problemTakeaway}>
+            <NarrativeWithMedia text={cs.problemState} media={cs.problemMedia} />
+          </Section>
+        )}
 
-        <Section label="Opportunity" takeaway={cs.opportunityTakeaway}>
-          <NarrativeWithMedia text={cs.opportunity} media={cs.opportunityMedia} />
-        </Section>
+        {cs.opportunity && (
+          <Section label="Opportunity" takeaway={cs.opportunityTakeaway}>
+            <NarrativeWithMedia text={cs.opportunity} media={cs.opportunityMedia} />
+          </Section>
+        )}
 
-        <Section label="Design Question" takeaway={cs.designQuestionTakeaway}>
-          <NarrativeWithMedia text={cs.designQuestion} media={cs.designQuestionMedia} />
-        </Section>
+        {cs.designQuestion && (
+          <Section label="Design Question" takeaway={cs.designQuestionTakeaway}>
+            <NarrativeWithMedia text={cs.designQuestion} media={cs.designQuestionMedia} />
+          </Section>
+        )}
 
         {cs.designGoals?.length > 0 && (
           <Section label="Design Goals">
@@ -411,8 +415,8 @@ export default function CaseStudy() {
             </>
           )} */}
 
-        <Section label="Process">
-          {cs.processSteps?.length > 0 && (
+        {cs.processSteps?.length > 0 && (
+          <Section label="Process">
             <ProcessSteps
               steps={cs.processSteps}
               designSystem={cs.designSystem}
@@ -420,8 +424,8 @@ export default function CaseStudy() {
               designSystemLabel={cs.designSystemLabel}
               designSystemMedia={cs.designSystemMedia}
             />
-          )}
-        </Section>
+          </Section>
+        )}
 
         {(cs.impact || cs.goalsMet?.length > 0) && (
           <Section label="Impact" takeaway={cs.impactTakeaway}>

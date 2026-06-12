@@ -90,6 +90,37 @@
   line-height: 1;
 }
 
+/* ─── Open to Work badge ───────────────────────────────────────────── */
+.navbar__otw {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #16a34a;
+  background: rgba(22, 163, 74, 0.09);
+  border: 1px solid rgba(22, 163, 74, 0.28);
+  border-radius: 100px;
+  padding: 3px 9px;
+  white-space: nowrap;
+}
+
+.navbar__otw-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16a34a;
+  flex-shrink: 0;
+  animation: otw-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes otw-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);   }
+  50%       { opacity: 0.5; transform: scale(0.75); }
+}
+
 /* ─── Desktop links ────────────────────────────────────────────────── */
 .navbar__links {
   display: flex;

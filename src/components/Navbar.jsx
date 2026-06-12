@@ -15,19 +15,16 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar__brand">
-        <div className="navbar__name-group">
-          <Link to="/" className="navbar__name" onClick={close}>Manasa Rapuru</Link>
-          <span className="navbar__subtitle">Bioinformatician</span>
-        </div>
+        <Link to="/" className="navbar__name" onClick={close}>Manasa Rapuru</Link>
       </div>
 
       {/* Desktop nav */}
       <nav className="navbar__links">
         <Link to="/projects" className={`navbar__link ${pathname === '/projects' ? 'navbar__link--active' : ''}`}>Projects</Link>
         <Link to="/about" className={`navbar__link ${pathname === '/about' ? 'navbar__link--active' : ''}`}>About Me</Link>
-        <a href="https://www.linkedin.com/in/manasa-rapuru-b10914126/recent-activity/newsletter/" target="_blank" rel="noopener noreferrer" className="navbar__link" aria-label="Newsletter">Newsletter</a>
+        {/* <a href="https://www.linkedin.com/in/manasa-rapuru-b10914126/recent-activity/newsletter/" target="_blank" rel="noopener noreferrer" className="navbar__link" aria-label="Newsletter">Newsletter</a> */}
         <a href="https://www.linkedin.com/in/manasa-rapuru-b10914126" target="_blank" rel="noopener noreferrer" className="navbar__linkedin-btn">
-          Connect on LinkedIn
+          Resume
         </a>
         <button className="navbar__theme-toggle" onClick={toggleDark} aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}>
           {dark ? <IconSun /> : <IconMoon />}

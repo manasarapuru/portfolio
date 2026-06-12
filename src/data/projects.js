@@ -115,7 +115,7 @@ export const PROJECTS = [
         {
           label: 'Deployment & Handoff',
           items: [
-            'Delivered a fully functional platform with training and documentation, enabling the customer-facing team to operate autonomously.',
+            '   ered a fully functional platform with training and documentation, enabling the customer-facing team to operate autonomously.',
             'Reduced manual cross-team requests and improved workflow efficiency',
             ],
           },
@@ -867,6 +867,172 @@ export const PROJECTS = [
       ],
     },
   }, */
+
+  { id: 'wes-wgs',             title: 'WES / WGS',             tagline: '', categories: [], year: '', role: '', company: '', tools: [], comingSoon: true, caseStudy: {} },
+  { id: 'single-cell-rna-seq', title: 'Single Cell RNA-seq',  tagline: '', categories: [], year: '', role: '', company: '', tools: [], comingSoon: true, caseStudy: {} },
+  {
+    id: 'crispr',
+    title: 'CRISPR gRNA Design for MRSA Antimicrobial Resistance Suppression',
+    tagline: 'A Python simulation for designing guide RNAs targeting the mecA resistance gene in Methicillin-resistant Staphylococcus aureus.',
+    categories: [],
+    year: '',
+    role: 'Computational Biologist',
+    company: 'Academic',
+    sector: 'Microbiology / Antimicrobial Resistance',
+    tools: ['Python'],
+    comingSoon: true,
+    caseStudy: {
+      product:
+        'A Python simulation for designing CRISPR guide RNA (gRNA) sequences targeting the mecA gene in MRSA — with the goal of suppressing antibiotic resistance by disrupting the protein-coding region responsible for beta-lactam resistance.',
+
+      context:
+        'MRSA (Methicillin-resistant Staphylococcus aureus) is a dangerous human pathogen resistant to beta-lactam antibiotics such as penicillin. Its resistance is encoded in the mecA gene, which produces a protein called PBP 2A (Penicillin-Binding Protein 2A). PBP 2A binds to and neutralizes beta-lactam antibiotics, rendering standard treatments ineffective and making MRSA infections particularly difficult to treat in clinical settings.',
+
+      problemState:
+        'The mecA gene gives MRSA the ability to resist the most common class of antibiotics. Without a way to precisely target and disrupt this resistance mechanism, treatment options remain limited — particularly for immunocompromised patients where MRSA carries high mortality risk.',
+
+      designQuestion:
+        'Can CRISPR-Cas9 be used to design guide RNAs that specifically target the mecA gene, disrupting the expression of PBP 2A and suppressing beta-lactam resistance in MRSA?',
+
+      opportunity:
+        'The CRISPR-Cas9 system offers a mechanism to precisely cut the mecA gene. The enzyme Cas9 acts as molecular scissors — guided to the exact target location by a ~20-base guide RNA (gRNA). By engineering gRNAs that direct Cas9 to the critical regions of mecA (specifically the domains enabling PBP 2A to confer resistance), it is theoretically possible to eliminate or mutate those fragments and restore antibiotic susceptibility.',
+
+      solutionGoal:
+        'Design and evaluate candidate gRNA sequences in Python that target high-specificity sites within the mecA gene, scoring each candidate based on target complementarity, GC content, and proximity to the resistance-conferring protein domains.',
+
+      solutionSteps: [
+        {
+          label: 'Target Identification',
+          items: [
+            'Reviewed MRSA mecA gene structure and identified the critical coding domains of PBP 2A responsible for beta-lactam resistance',
+            'Located all NGG PAM sequences required for Cas9 cleavage across the mecA gene',
+          ],
+        },
+        {
+          label: 'gRNA Candidate Design',
+          items: [
+            'Extracted 20-nucleotide protospacer sequences adjacent to each PAM site across the mecA target region',
+            'Evaluated candidates on GC content (optimal 40–70%), homopolymer avoidance, and proximity to resistance-conferring coding regions',
+          ],
+        },
+        {
+          label: 'Off-Target Scoring',
+          items: [
+            'Implemented a basic off-target similarity scoring function to flag gRNAs with high complementarity to non-target genomic regions',
+            'Deprioritized candidates with significant off-target risk to improve theoretical specificity',
+          ],
+        },
+      ],
+
+      solutionExecute:
+        'Built a Python pipeline that takes the mecA gene sequence as input, identifies all valid PAM sites, extracts candidate 20-mer protospacer sequences, scores them across multiple parameters, and outputs a ranked list of candidate gRNAs for hypothetical experimental validation.',
+
+      impactHeadline: [
+        { stat: 'Computational gRNA candidates designed', context: 'Ranked guide RNA sequences targeting the mecA resistance gene in MRSA' },
+        { stat: 'Class project simulation', context: 'Demonstrates understanding of CRISPR-Cas9 mechanism and guide RNA design principles' },
+      ],
+
+      impact:
+        'This was a class project simulation — gRNA candidates were not experimentally validated. The project demonstrated applied understanding of CRISPR-Cas9 mechanism, guide RNA design principles, and how computational tools can accelerate early-stage therapeutic target identification.',
+
+      improvements:
+        'Experimental validation with wet lab data would be the natural next step. More sophisticated off-target scoring using tools like CRISPOR or Cas-OFFinder would improve candidate quality. Extending the model to incorporate delivery mechanism design (e.g., phage-mediated delivery to MRSA) would also add depth.',
+
+      designSystemMap: null,
+
+      processSteps: [
+        { step: 'Target Selection', notes: 'Selected mecA as the target gene based on its role as the primary determinant of MRSA beta-lactam resistance. Focused gRNA design on the coding region for the PBP 2A beta-lactam binding domain.' },
+        { step: 'Sequence Parsing', notes: 'Parsed the mecA gene sequence in Python to identify all NGG PAM sites and extract candidate 20-mer protospacer sequences across the full gene.' },
+        { step: 'Candidate Scoring', notes: 'Scored each candidate gRNA on GC content, homopolymer runs, and distance from the critical resistance-conferring coding domain.' },
+        { step: 'Off-Target Analysis', notes: 'Built a basic off-target scoring function to identify and deprioritize gRNA sequences with high similarity to non-target genomic regions.' },
+        { step: 'Output & Ranking', notes: 'Produced a ranked list of candidate gRNAs with scores across all criteria, ready for hypothetical experimental validation.' },
+      ],
+    },
+  },
+  {
+    id: 'phylogenetics',
+    title: 'Phylogenetic Analysis of Candidatus Saccharibacteria in the Oral Microbiome',
+    tagline: 'Reconstructing evolutionary relationships to understand the role of a poorly characterised bacterial phylum in oral health.',
+    categories: [],
+    year: '',
+    role: 'Researcher',
+    company: 'Academic',
+    sector: 'Microbiology / Oral Microbiome',
+    tools: ['Python'],
+    comingSoon: true,
+    caseStudy: {
+      productLabel: 'Focus',
+      product:
+        'Conducted phylogenetic analysis to reconstruct the evolutionary relationships of Candidatus Saccharibacteria (TM7) and characterise their potential functional role within the oral microbiome.',
+      context:
+        'Candidatus Saccharibacteria is an understudied bacterial phylum found in the human oral microbiome. As an ultrasmall, obligate epibiont — meaning it lives attached to and dependent on other bacteria — its evolutionary origins and functional contributions to oral health and disease are not well understood. Phylogenetic methods offer a way to infer relationships and function from sequence data alone, even for organisms that cannot yet be cultured in a lab.',
+      impact:
+        'Phylogenetic reconstruction provided insight into the evolutionary placement of Candidatus Saccharibacteria relative to other bacterial phyla and helped frame hypotheses about its functional role in oral microbiome dynamics.',
+      impactHeadline: [
+        { stat: 'Evolutionary placement reconstructed', context: 'Phylogenetic tree positioning Candidatus Saccharibacteria relative to related phyla' },
+        { stat: 'Oral microbiome context', context: 'Analysis framed within the ecological dynamics of the human oral cavity' },
+      ],
+      improvements: '',
+      designSystemMap: null,
+      processSteps: [],
+    },
+  },
+  {
+    id: 'protein-modelling',
+    title: 'Protein Visualisation of Candidatus Saccharibacteria',
+    tagline: 'Structural visualisation to explore the potential functional role of a poorly characterised oral microbiome organism.',
+    categories: [],
+    year: '',
+    role: 'Researcher',
+    company: 'Academic',
+    sector: 'Microbiology / Structural Biology',
+    tools: ['Python'],
+    comingSoon: true,
+    caseStudy: {
+      productLabel: 'Focus',
+      product:
+        'Performed protein structure visualisation analyses on Candidatus Saccharibacteria to investigate the potential functional roles of its proteins within the oral microbiome.',
+      context:
+        'Candidatus Saccharibacteria is an ultrasmall obligate epibiont found in the human oral cavity. Because it cannot yet be cultured independently in a lab, structural and computational approaches are among the few ways to generate hypotheses about what its proteins do and how it interacts with its bacterial hosts. Protein visualisation bridges sequence data and potential biological function.',
+      impact:
+        'Structural visualisation provided a basis for generating hypotheses about protein function in Candidatus Saccharibacteria, contributing to a broader understanding of how this phylum may interact with host bacteria in the oral microbiome.',
+      impactHeadline: [
+        { stat: 'Structure-informed functional hypotheses', context: 'Protein visualisation used to infer potential roles in host-epibiont interactions' },
+        { stat: 'Oral microbiome context', context: 'Analysis situated within the ecology of Candidatus Saccharibacteria in the human oral cavity' },
+      ],
+      improvements: '',
+      designSystemMap: null,
+      processSteps: [],
+    },
+  },
+  {
+    id: 'qpcr-dpcr',
+    title: 'qPCR / dPCR Assay Design',
+    tagline: 'Delivering custom bioinformatics assay designs for molecular diagnostics and targeted genomic analysis.',
+    categories: [],
+    year: '',
+    role: 'Bioinformatician',
+    company: 'Thermo Fisher Scientific',
+    sector: 'Molecular Diagnostics',
+    tools: ['Python'],
+    comingSoon: true,
+    caseStudy: {
+      productLabel: 'Service',
+      product:
+        'Supported a revenue-generating genomics service by delivering custom bioinformatics assay designs for molecular diagnostics and targeted genomic analysis.',
+      context:
+        'qPCR (quantitative Polymerase Chain Reaction) and dPCR (digital PCR) are gold-standard techniques for quantifying nucleic acids with high sensitivity. Assay design — selecting primers and probes that amplify a specific target sequence with precision — directly determines the accuracy and clinical utility of a diagnostic result.',
+      impact:
+        'Assay designs contributed directly to a commercial genomics service, supporting accurate molecular diagnostics for customers in clinical and research settings.',
+      impactHeadline: [
+        { stat: 'Revenue-generating service', context: 'Assay designs supported a commercial genomics diagnostic offering' },
+        { stat: 'Custom assay design', context: 'Targeted genomic analysis across molecular diagnostics applications' },
+      ],
+      improvements: '',
+      designSystemMap: null,
+      processSteps: [],
+    },
+  },
 
   {
     id: 'ai-generated-short-form-visual-companion-for-scientific-posters',
